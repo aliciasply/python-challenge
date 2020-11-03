@@ -49,25 +49,24 @@ for candidate in candidate_list:
 
 # A complete list of candidates who received votes
 # print(candidate_list)    
-print(f'{candidate}: {vote_percentage}% ({vote_number})')  
+#print(f'{candidate}: {vote_percentage}% ({vote_number})')  
 
 # The winner of the election based on popular vote.
 #example from stackoverflow - max(stats, key=stats.get) the stats in here is the dictionary
-print("--------------------------")
+print("-"*25)
 #print(max(candidate_list, key=candidate_list.get))
 print(f'Winner: {max(candidate_list, key=candidate_list.get)}')
-print("--------------------------")
+print("-"*25)
 
-# output = ("Election Results\n"
-# "--------------------------\n"
-# f'Total Votes: {voter_count}\n'
-# "--------------------------\n"
-
-# f'{candidate}: {vote_percentage}% ({vote_number}\n'
-# "--------------------------\n"
-# f'Winner: {max(candidate_list, key=candidate_list.get)}\n'
-# "--------------------------")
-
-# print(output)
-# with open ("analysis/output.txt", "w") as txt: 
-#     txt.write(output)
+with open ("analysis/output.txt", "w") as txt: 
+    #txt.writelines(output)
+    txt.write("Election Results\n")
+    txt.write("-"*25 + "\n")
+    txt.write(f'Total Votes: {voter_count}\n')
+    for candidate in candidate_list:
+        vote_number = candidate_list[candidate] 
+        vote_percentage = "{:.3f}".format(vote_number/voter_count*100)
+        txt.write(f'{candidate}: {vote_percentage}% ({vote_number})\n')
+    txt.write("-"*25 + "\n")
+    txt.write(f'Winner: {max(candidate_list, key=candidate_list.get)}\n')
+    txt.write("-"*25)
