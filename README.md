@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 # python-challenge
-<<<<<<< HEAD
-=======
+
 # PyBank Results
 
 <br />Financial Analysis
@@ -27,4 +26,4 @@
 <br />-------------------------
 <br />Winner: Khan
 <br />-------------------------
->>>>>>> 730fe23e6779f806bd869b5a42e27c1fc5ea2acc
+
